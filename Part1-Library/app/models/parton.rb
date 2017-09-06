@@ -1,0 +1,2 @@
+class Parton < ApplicationRecord
+end
