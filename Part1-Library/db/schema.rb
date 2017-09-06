@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170906193013) do
+ActiveRecord::Schema.define(version: 20170906193342) do
 
   create_table "authors", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20170906193013) do
 
   create_table "holds", force: :cascade do |t|
     t.date "date_placed"
+    t.integer "book_id"
+    t.integer "patron_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "loans", force: :cascade do |t|
+    t.date "date_due"
+    t.boolean "renewed?"
     t.integer "book_id"
     t.integer "patron_id"
     t.datetime "created_at", null: false
