@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  number: 1
+  release_date: 2017-09-10
+  comic_id: 1
+
+two:
+  name: MyString
+  number: 1
+  release_date: 2017-09-10
+  comic_id: 1
