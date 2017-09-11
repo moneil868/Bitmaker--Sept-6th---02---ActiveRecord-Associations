@@ -1,0 +1,912 @@
+1) Find the album titled "Vinicius De Moraes", and then use an association-provided method to find all its tracks.
+
+
+ap Album.find_by(title: "Vinicius De Moraes").tracks
+  Album Load (0.6ms)  SELECT  "albums".* FROM "albums" WHERE "albums"."title" = $1 LIMIT $2  [["title", "Vinicius De Moraes"], ["LIMIT", 1]]
+  Track Exists (1.9ms)  SELECT  1 AS one FROM "tracks" WHERE "tracks"."album_id" = $1 LIMIT $2  [["album_id", 247], ["LIMIT", 1]]
+  Track Load (1.3ms)  SELECT "tracks".* FROM "tracks" WHERE "tracks"."album_id" = $1  [["album_id", 247]]
+[
+    [ 0] #<Track:0x007ffbf925b9d8> {
+                   :id => 3117,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Pela Luz Dos Olhos Teus",
+             :composer => nil,
+         :milliseconds => 119196,
+                :bytes => 3905715,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [ 1] #<Track:0x007ffbf9280c60> {
+                   :id => 3118,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "A Bencao E Outros",
+             :composer => nil,
+         :milliseconds => 421093,
+                :bytes => 14234427,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [ 2] #<Track:0x007ffbf9280760> {
+                   :id => 3119,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Tudo Na Mais Santa Paz",
+             :composer => nil,
+         :milliseconds => 222406,
+                :bytes => 7426757,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [ 3] #<Track:0x007ffbf92802d8> {
+                   :id => 3120,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "O Velho E Aflor",
+             :composer => nil,
+         :milliseconds => 275121,
+                :bytes => 9126828,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [ 4] #<Track:0x007ffbf928be08> {
+                   :id => 3121,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Cotidiano N 2",
+             :composer => nil,
+         :milliseconds => 55902,
+                :bytes => 1805797,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [ 5] #<Track:0x007ffbf928b980> {
+                   :id => 3122,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Adeus",
+             :composer => nil,
+         :milliseconds => 221884,
+                :bytes => 7259351,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [ 6] #<Track:0x007ffbf928b4f8> {
+                   :id => 3124,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "So Por Amor",
+             :composer => nil,
+         :milliseconds => 236591,
+                :bytes => 7745764,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [ 7] #<Track:0x007ffbf928b070> {
+                   :id => 3125,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Meu Pranto Rolou",
+             :composer => nil,
+         :milliseconds => 181760,
+                :bytes => 6003345,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [ 8] #<Track:0x007ffbf928abe8> {
+                   :id => 3126,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Mulher Carioca",
+             :composer => nil,
+         :milliseconds => 191686,
+                :bytes => 6395048,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [ 9] #<Track:0x007ffbf928a760> {
+                   :id => 3128,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Samba Do Jato",
+             :composer => nil,
+         :milliseconds => 220813,
+                :bytes => 7357840,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [10] #<Track:0x007ffbf928a2d8> {
+                   :id => 3129,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Oi, La",
+             :composer => nil,
+         :milliseconds => 167053,
+                :bytes => 5562700,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [11] #<Track:0x007ffbf9289e50> {
+                   :id => 3130,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Vinicius, Poeta Do Encontro",
+             :composer => nil,
+         :milliseconds => 336431,
+                :bytes => 10858776,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [12] #<Track:0x007ffbf92899c8> {
+                   :id => 3131,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Soneto Da Separacao",
+             :composer => nil,
+         :milliseconds => 193880,
+                :bytes => 6277511,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [13] #<Track:0x007ffbf9289540> {
+                   :id => 3123,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Samba Pra Endrigo",
+             :composer => nil,
+         :milliseconds => 259265,
+                :bytes => 8823551,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:06 UTC +00:00
+    },
+    [14] #<Track:0x007ffbf92890b8> {
+                   :id => 3127,
+             :album_id => 247,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Um Homem Chamado Alfredo",
+             :composer => nil,
+         :milliseconds => 151640,
+                :bytes => 4976227,
+           :unit_price => 0.99,
+           :created_at => Mon, 04 Jun 2007 21:03:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:06 UTC +00:00
+    }
+]
+=> nil
+
+
+2) Find the artist called "Philip Glass Ensemble", and then use an association-provided method to find all their albums.
+
+ap Artist.find_by(name: "Philip Glass Ensemble" ).albums
+  Artist Load (0.7ms)  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2  [["name", "Philip Glass Ensemble"], ["LIMIT", 1]]
+  Album Exists (0.6ms)  SELECT  1 AS one FROM "albums" WHERE "albums"."artist_id" = $1 LIMIT $2  [["artist_id", 275], ["LIMIT", 1]]
+  Album Load (0.5ms)  SELECT "albums".* FROM "albums" WHERE "albums"."artist_id" = $1  [["artist_id", 275]]
+[
+    [0] #<Album:0x007ffbf848c730> {
+                :id => 347,
+         :artist_id => 275,
+             :title => "Koyaanisqatsi (Soundtrack from the Motion Picture)",
+        :created_at => Mon, 08 Aug 2011 02:13:19 UTC +00:00,
+        :updated_at => Wed, 29 Jan 2014 22:14:03 UTC +00:00
+    }
+]
+=> nil
+
+
+3) Find the "Brazilian Music" playlist and then use an association-provided method to find all its tracks.
+
+
+irb(main):010:0> ap Playlist.find_by(name:  "Brazilian Music").tracks
+  Playlist Load (0.7ms)  SELECT  "playlists".* FROM "playlists" WHERE "playlists"."name" = $1 LIMIT $2  [["name", "Brazilian Music"], ["LIMIT", 1]]
+  Track Exists (2.7ms)  SELECT  1 AS one FROM "tracks" INNER JOIN "playlists_tracks" ON "tracks"."id" = "playlists_tracks"."track_id" WHERE "playlists_tracks"."playlist_id" = $1 LIMIT $2  [["playlist_id", 11], ["LIMIT", 1]]
+  Track Load (3.3ms)  SELECT "tracks".* FROM "tracks" INNER JOIN "playlists_tracks" ON "tracks"."id" = "playlists_tracks"."track_id" WHERE "playlists_tracks"."playlist_id" = $1  [["playlist_id", 11]]
+[
+    [ 0] #<Track:0x007ffbf92da990> {
+                   :id => 215,
+             :album_id => 21,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Sozinho",
+             :composer => "Peninha",
+         :milliseconds => 190589,
+                :bytes => 6253200,
+           :unit_price => 0.99,
+           :created_at => Fri, 26 Jan 2007 13:48:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [ 1] #<Track:0x007ffbf92da850> {
+                   :id => 219,
+             :album_id => 21,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Odara",
+             :composer => "Caetano Veloso",
+         :milliseconds => 141270,
+                :bytes => 4704104,
+           :unit_price => 0.99,
+           :created_at => Fri, 26 Jan 2007 13:48:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [ 2] #<Track:0x007ffbf92da6e8> {
+                   :id => 220,
+             :album_id => 21,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "A Luz De Tieta",
+             :composer => "Caetano Veloso",
+         :milliseconds => 251742,
+                :bytes => 8507446,
+           :unit_price => 0.99,
+           :created_at => Fri, 26 Jan 2007 13:48:09 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [ 3] #<Track:0x007ffbf92da5a8> {
+                   :id => 228,
+             :album_id => 23,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Vai Passar",
+             :composer => nil,
+         :milliseconds => 369763,
+                :bytes => 12359161,
+           :unit_price => 0.99,
+           :created_at => Sat, 26 Mar 2011 21:48:57 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [ 4] #<Track:0x007ffbf92da468> {
+                   :id => 236,
+             :album_id => 23,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "A Banda",
+             :composer => nil,
+         :milliseconds => 132493,
+                :bytes => 4349539,
+           :unit_price => 0.99,
+           :created_at => Sat, 26 Mar 2011 21:48:57 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [ 5] #<Track:0x007ffbf92da300> {
+                   :id => 391,
+             :album_id => 34,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Garota De Ipanema",
+             :composer => "Vários",
+         :milliseconds => 279536,
+                :bytes => 9141343,
+           :unit_price => 0.99,
+           :created_at => Wed, 27 Dec 2006 12:29:31 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:57 UTC +00:00
+    },
+    [ 6] #<Track:0x007ffbf92da1c0> {
+                   :id => 393,
+             :album_id => 34,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Tarde Em Itapoã",
+             :composer => "Vários",
+         :milliseconds => 313704,
+                :bytes => 10344491,
+           :unit_price => 0.99,
+           :created_at => Wed, 27 Dec 2006 12:29:31 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:57 UTC +00:00
+    },
+    [ 7] #<Track:0x007ffbf92da080> {
+                   :id => 504,
+             :album_id => 41,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "O Que É O Que É ?",
+             :composer => nil,
+         :milliseconds => 259291,
+                :bytes => 8650647,
+           :unit_price => 0.99,
+           :created_at => Thu, 07 Dec 2006 07:11:31 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:57 UTC +00:00
+    },
+    [ 8] #<Track:0x007ffbf92d9ec8> {
+                   :id => 516,
+             :album_id => 23,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Voce e Linda",
+             :composer => nil,
+         :milliseconds => 242938,
+                :bytes => 8050268,
+           :unit_price => 0.99,
+           :created_at => Sat, 26 Mar 2011 21:48:57 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:57 UTC +00:00
+    },
+    [ 9] #<Track:0x007ffbf92d9d38> {
+                   :id => 523,
+             :album_id => 23,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Sampa",
+             :composer => nil,
+         :milliseconds => 185051,
+                :bytes => 6151831,
+           :unit_price => 0.99,
+           :created_at => Sat, 26 Mar 2011 21:48:57 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:57 UTC +00:00
+    },
+    [10] #<Track:0x007ffbf92d9bf8> {
+                   :id => 738,
+             :album_id => 57,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Admirável Gado Novo",
+             :composer => nil,
+         :milliseconds => 274390,
+                :bytes => 9144031,
+           :unit_price => 0.99,
+           :created_at => Mon, 15 Aug 2005 05:33:30 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:57 UTC +00:00
+    },
+    [11] #<Track:0x007ffbf92d9928> {
+                   :id => 867,
+             :album_id => 70,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Açai",
+             :composer => "Djavan",
+         :milliseconds => 270968,
+                :bytes => 8893682,
+           :unit_price => 0.99,
+           :created_at => Wed, 17 Feb 2010 21:04:10 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:58 UTC +00:00
+    },
+    [12] #<Track:0x007ffbf92d9798> {
+                   :id => 852,
+             :album_id => 69,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Meu Bem-Querer",
+             :composer => nil,
+         :milliseconds => 255608,
+                :bytes => 8330047,
+           :unit_price => 0.99,
+           :created_at => Fri, 14 May 2004 16:03:30 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:58 UTC +00:00
+    },
+    [13] #<Track:0x007ffbf92d9630> {
+                   :id => 864,
+             :album_id => 70,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Samurai",
+             :composer => "Djavan",
+         :milliseconds => 330997,
+                :bytes => 10872787,
+           :unit_price => 0.99,
+           :created_at => Wed, 17 Feb 2010 21:04:10 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:58 UTC +00:00
+    },
+    [14] #<Track:0x007ffbf92d94c8> {
+                   :id => 874,
+             :album_id => 70,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Sina",
+             :composer => "Djavan",
+         :milliseconds => 268173,
+                :bytes => 8906539,
+           :unit_price => 0.99,
+           :created_at => Wed, 17 Feb 2010 21:04:10 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:58 UTC +00:00
+    },
+    [15] #<Track:0x007ffbf92d9338> {
+                   :id => 885,
+             :album_id => 71,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Fascinação",
+             :composer => nil,
+         :milliseconds => 180793,
+                :bytes => 5793959,
+           :unit_price => 0.99,
+           :created_at => Sun, 08 Apr 2007 20:59:45 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:58 UTC +00:00
+    },
+    [16] #<Track:0x007ffbf92d91f8> {
+                   :id => 888,
+             :album_id => 71,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Madalena",
+             :composer => nil,
+         :milliseconds => 157387,
+                :bytes => 5243721,
+           :unit_price => 0.99,
+           :created_at => Sun, 08 Apr 2007 20:59:45 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:58 UTC +00:00
+    },
+    [17] #<Track:0x007ffbf92d9090> {
+                   :id => 1088,
+             :album_id => 86,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Palco (Live)",
+             :composer => nil,
+         :milliseconds => 238315,
+                :bytes => 8026622,
+           :unit_price => 0.99,
+           :created_at => Fri, 30 Jun 2006 16:51:39 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:58 UTC +00:00
+    },
+    [18] #<Track:0x007ffbf92d8e38> {
+                   :id => 1093,
+             :album_id => 86,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Quanta (Live)",
+             :composer => nil,
+         :milliseconds => 357485,
+                :bytes => 11774865,
+           :unit_price => 0.99,
+           :created_at => Fri, 30 Jun 2006 16:51:39 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:58 UTC +00:00
+    },
+    [19] #<Track:0x007ffbf92d8cf8> {
+                   :id => 1099,
+             :album_id => 86,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "A Novidade (Live)",
+             :composer => nil,
+         :milliseconds => 316969,
+                :bytes => 10508000,
+           :unit_price => 0.99,
+           :created_at => Fri, 30 Jun 2006 16:51:39 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:58 UTC +00:00
+    },
+    [20] #<Track:0x007ffbf92d8bb8> {
+                   :id => 1105,
+             :album_id => 73,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "A Novidade",
+             :composer => "Gilberto Gil",
+         :milliseconds => 324780,
+                :bytes => 10765600,
+           :unit_price => 0.99,
+           :created_at => Mon, 02 Jun 2008 13:45:40 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:58 UTC +00:00
+    },
+    [21] #<Track:0x007ffbf92d8a78> {
+                   :id => 1518,
+             :album_id => 122,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Filho Maravilha",
+             :composer => nil,
+         :milliseconds => 227526,
+                :bytes => 7498259,
+           :unit_price => 0.99,
+           :created_at => Mon, 09 Jan 2006 07:11:20 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:59 UTC +00:00
+    },
+    [22] #<Track:0x007ffbf92d8938> {
+                   :id => 1916,
+             :album_id => 158,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Coração De Estudante",
+             :composer => "Wagner Tiso, Milton Nascimento",
+         :milliseconds => 238550,
+                :bytes => 7797308,
+           :unit_price => 0.99,
+           :created_at => Fri, 25 Feb 2005 07:59:51 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:00 UTC +00:00
+    },
+    [23] #<Track:0x007ffbf92d87f8> {
+                   :id => 1921,
+             :album_id => 158,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Nos Bailes Da Vida",
+             :composer => "Milton Nascimento, Fernando Brant",
+         :milliseconds => 275748,
+                :bytes => 9126170,
+           :unit_price => 0.99,
+           :created_at => Fri, 25 Feb 2005 07:59:51 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:00 UTC +00:00
+    },
+    [24] #<Track:0x007ffbf92d86b8> {
+                   :id => 1928,
+             :album_id => 158,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Maria, Maria",
+             :composer => "Milton Nascimento, Fernando Brant",
+         :milliseconds => 72463,
+                :bytes => 2371543,
+           :unit_price => 0.99,
+           :created_at => Fri, 25 Feb 2005 07:59:51 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:00 UTC +00:00
+    },
+    [25] #<Track:0x007ffbf92d8578> {
+                   :id => 2752,
+             :album_id => 222,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Chocolate",
+             :composer => "Tim Maia",
+         :milliseconds => 194690,
+                :bytes => 6411587,
+           :unit_price => 0.99,
+           :created_at => Fri, 01 Oct 2004 10:01:18 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:02 UTC +00:00
+    },
+    [26] #<Track:0x007ffbf92d8438> {
+                   :id => 2753,
+             :album_id => 222,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Azul Da Cor Do Mar",
+             :composer => "Tim Maia",
+         :milliseconds => 197955,
+                :bytes => 6475007,
+           :unit_price => 0.99,
+           :created_at => Fri, 01 Oct 2004 10:01:18 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:02 UTC +00:00
+    },
+    [27] #<Track:0x007ffbf92d82f8> {
+                   :id => 2758,
+             :album_id => 222,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Não Vou Ficar",
+             :composer => "Tim Maia",
+         :milliseconds => 172068,
+                :bytes => 5642919,
+           :unit_price => 0.99,
+           :created_at => Fri, 01 Oct 2004 10:01:18 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:02 UTC +00:00
+    },
+    [28] #<Track:0x007ffbf92d81b8> {
+                   :id => 2767,
+             :album_id => 223,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Gostava Tanto De Você",
+             :composer => nil,
+         :milliseconds => 253805,
+                :bytes => 8380077,
+           :unit_price => 0.99,
+           :created_at => Sun, 14 Aug 2005 19:04:42 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:02 UTC +00:00
+    },
+    [29] #<Track:0x007ffbf92d8050> {
+                   :id => 2768,
+             :album_id => 223,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Você",
+             :composer => nil,
+         :milliseconds => 242599,
+                :bytes => 7911702,
+           :unit_price => 0.99,
+           :created_at => Sun, 14 Aug 2005 19:04:42 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:02 UTC +00:00
+    },
+    [30] #<Track:0x007ffbf5957e98> {
+                   :id => 2769,
+             :album_id => 223,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Não Quero Dinheiro",
+             :composer => nil,
+         :milliseconds => 152607,
+                :bytes => 5031797,
+           :unit_price => 0.99,
+           :created_at => Sun, 14 Aug 2005 19:04:42 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:03 UTC +00:00
+    },
+    [31] #<Track:0x007ffbf5957d58> {
+                   :id => 230,
+             :album_id => 23,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Bye, Bye Brasil",
+             :composer => nil,
+         :milliseconds => 283402,
+                :bytes => 9499590,
+           :unit_price => 0.99,
+           :created_at => Sat, 26 Mar 2011 21:48:57 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:04 UTC +00:00
+    },
+    [32] #<Track:0x007ffbf5957c18> {
+                   :id => 730,
+             :album_id => 57,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Malandragem",
+             :composer => nil,
+         :milliseconds => 247588,
+                :bytes => 8165048,
+           :unit_price => 0.99,
+           :created_at => Mon, 15 Aug 2005 05:33:30 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:05 UTC +00:00
+    },
+    [33] #<Track:0x007ffbf5957ad8> {
+                   :id => 858,
+             :album_id => 69,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Esquinas",
+             :composer => nil,
+         :milliseconds => 280999,
+                :bytes => 9096726,
+           :unit_price => 0.99,
+           :created_at => Fri, 14 May 2004 16:03:30 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:05 UTC +00:00
+    },
+    [34] #<Track:0x007ffbf5957998> {
+                   :id => 877,
+             :album_id => 71,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "O Bêbado e a Equilibrista",
+             :composer => nil,
+         :milliseconds => 223059,
+                :bytes => 7306143,
+           :unit_price => 0.99,
+           :created_at => Sun, 08 Apr 2007 20:59:45 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:05 UTC +00:00
+    },
+    [35] #<Track:0x007ffbf5957858> {
+                   :id => 1514,
+             :album_id => 122,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Selassiê",
+             :composer => nil,
+         :milliseconds => 326321,
+                :bytes => 10724982,
+           :unit_price => 0.99,
+           :created_at => Mon, 09 Jan 2006 07:11:20 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:05 UTC +00:00
+    },
+    [36] #<Track:0x007ffbf5957718> {
+                   :id => 1519,
+             :album_id => 122,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "Taj Mahal",
+             :composer => nil,
+         :milliseconds => 289750,
+                :bytes => 9502898,
+           :unit_price => 0.99,
+           :created_at => Mon, 09 Jan 2006 07:11:20 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:05 UTC +00:00
+    },
+    [37] #<Track:0x007ffbf59575d8> {
+                   :id => 2754,
+             :album_id => 222,
+             :genre_id => 7,
+        :media_type_id => 1,
+                 :name => "O Descobridor Dos Sete Mares",
+             :composer => "Gilson Mendonça/Michel",
+         :milliseconds => 262974,
+                :bytes => 8749583,
+           :unit_price => 0.99,
+           :created_at => Fri, 01 Oct 2004 10:01:18 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:15:05 UTC +00:00
+    }
+]
+=> nil
+
+
+4) Find the "Jazz" genre and then use an association-provided method to find all its tracks.
+
+irb(main):017:0> ap Genre.find_by(name: "Jazz").tracks.limit(10)
+  Genre Load (0.7ms)  SELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2  [["name", "Jazz"], ["LIMIT", 1]]
+  Track Exists (0.5ms)  SELECT  1 AS one FROM "tracks" WHERE "tracks"."genre_id" = $1 LIMIT $2  [["genre_id", 2], ["LIMIT", 1]]
+  Track Load (0.7ms)  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."genre_id" = $1 LIMIT $2  [["genre_id", 2], ["LIMIT", 10]]
+[
+    [0] #<Track:0x007ffbfb0e00c0> {
+                   :id => 63,
+             :album_id => 8,
+             :genre_id => 2,
+        :media_type_id => 1,
+                 :name => "Desafinado",
+             :composer => nil,
+         :milliseconds => 185338,
+                :bytes => 5990473,
+           :unit_price => 0.99,
+           :created_at => Mon, 11 Mar 2013 07:51:29 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [1] #<Track:0x007ffbf8243618> {
+                   :id => 64,
+             :album_id => 8,
+             :genre_id => 2,
+        :media_type_id => 1,
+                 :name => "Garota De Ipanema",
+             :composer => nil,
+         :milliseconds => 285048,
+                :bytes => 9348428,
+           :unit_price => 0.99,
+           :created_at => Mon, 11 Mar 2013 07:51:29 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [2] #<Track:0x007ffbf82429c0> {
+                   :id => 65,
+             :album_id => 8,
+             :genre_id => 2,
+        :media_type_id => 1,
+                 :name => "Samba De Uma Nota Só (One Note Samba)",
+             :composer => nil,
+         :milliseconds => 137273,
+                :bytes => 4535401,
+           :unit_price => 0.99,
+           :created_at => Mon, 11 Mar 2013 07:51:29 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [3] #<Track:0x007ffbf8242268> {
+                   :id => 66,
+             :album_id => 8,
+             :genre_id => 2,
+        :media_type_id => 1,
+                 :name => "Por Causa De Você",
+             :composer => nil,
+         :milliseconds => 169900,
+                :bytes => 5536496,
+           :unit_price => 0.99,
+           :created_at => Mon, 11 Mar 2013 07:51:29 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [4] #<Track:0x007ffbf8241840> {
+                   :id => 67,
+             :album_id => 8,
+             :genre_id => 2,
+        :media_type_id => 1,
+                 :name => "Ligia",
+             :composer => nil,
+         :milliseconds => 251977,
+                :bytes => 8226934,
+           :unit_price => 0.99,
+           :created_at => Mon, 11 Mar 2013 07:51:29 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [5] #<Track:0x007ffbf8240ff8> {
+                   :id => 68,
+             :album_id => 8,
+             :genre_id => 2,
+        :media_type_id => 1,
+                 :name => "Fotografia",
+             :composer => nil,
+         :milliseconds => 129227,
+                :bytes => 4198774,
+           :unit_price => 0.99,
+           :created_at => Mon, 11 Mar 2013 07:51:29 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [6] #<Track:0x007ffbf8240620> {
+                   :id => 70,
+             :album_id => 8,
+             :genre_id => 2,
+        :media_type_id => 1,
+                 :name => "Se Todos Fossem Iguais A Você (Instrumental)",
+             :composer => nil,
+         :milliseconds => 134948,
+                :bytes => 4393377,
+           :unit_price => 0.99,
+           :created_at => Mon, 11 Mar 2013 07:51:29 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [7] #<Track:0x007ffbfb0ebd30> {
+                   :id => 71,
+             :album_id => 8,
+             :genre_id => 2,
+        :media_type_id => 1,
+                 :name => "Falando De Amor",
+             :composer => nil,
+         :milliseconds => 219663,
+                :bytes => 7121735,
+           :unit_price => 0.99,
+           :created_at => Mon, 11 Mar 2013 07:51:29 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [8] #<Track:0x007ffbfb0eb8a8> {
+                   :id => 72,
+             :album_id => 8,
+             :genre_id => 2,
+        :media_type_id => 1,
+                 :name => "Angela",
+             :composer => nil,
+         :milliseconds => 169508,
+                :bytes => 5574957,
+           :unit_price => 0.99,
+           :created_at => Mon, 11 Mar 2013 07:51:29 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    },
+    [9] #<Track:0x007ffbfb0eb420> {
+                   :id => 75,
+             :album_id => 8,
+             :genre_id => 2,
+        :media_type_id => 1,
+                 :name => "O Boto (Bôto)",
+             :composer => nil,
+         :milliseconds => 366837,
+                :bytes => 12089673,
+           :unit_price => 0.99,
+           :created_at => Mon, 11 Mar 2013 07:51:29 UTC +00:00,
+           :updated_at => Wed, 29 Jan 2014 22:14:56 UTC +00:00
+    }
+]
+=> nil
+
+
+5) Find the track "My Time After Awhile" and then use an association-provided method to find its genre.
+
+irb(main):021:0> ap Track.find_by(name: "My Time After Awhile").genre
+  Track Load (0.8ms)  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."name" = $1 LIMIT $2  [["name", "My Time After Awhile"], ["LIMIT", 1]]
+  Genre Load (0.4ms)  SELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2  [["id", 6], ["LIMIT", 1]]
+#<Genre:0x007ffbf6187c80> {
+            :id => 6,
+          :name => "Blues",
+    :created_at => Sun, 13 Mar 2011 07:33:57 UTC +00:00,
+    :updated_at => Wed, 29 Jan 2014 22:14:08 UTC +00:00
+}
+=> nil
+
+
+6) Use an association-provided method to find the media type of that same track.
+
+irb(main):022:0> ap Track.find_by(name: "My Time After Awhile").media_type
+  Track Load (0.9ms)  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."name" = $1 LIMIT $2  [["name", "My Time After Awhile"], ["LIMIT", 1]]
+  MediaType Load (0.5ms)  SELECT  "media_types".* FROM "media_types" WHERE "media_types"."id" = $1 LIMIT $2  [["id", 1], ["LIMIT", 1]]
+#<MediaType:0x007ffbf62d7978> {
+            :id => 1,
+          :name => "MPEG audio file",
+    :created_at => Fri, 24 Nov 2006 08:21:33 UTC +00:00,
+    :updated_at => Wed, 29 Jan 2014 22:14:22 UTC +00:00
+}
+=> nil
+
+7) Use an association-provided method to find the album that track appears on.
+
+irb(main):024:0> ap Track.find_by(name: "My Time After Awhile").album
+  Track Load (0.6ms)  SELECT  "tracks".* FROM "tracks" WHERE "tracks"."name" = $1 LIMIT $2  [["name", "My Time After Awhile"], ["LIMIT", 1]]
+  Album Load (0.3ms)  SELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2  [["id", 20], ["LIMIT", 1]]
+#<Album:0x007ffbf58c4760> {
+            :id => 20,
+     :artist_id => 15,
+         :title => "The Best Of Buddy Guy - The Millenium Collection",
+    :created_at => Mon, 20 Apr 2009 12:00:13 UTC +00:00,
+    :updated_at => Wed, 29 Jan 2014 22:14:02 UTC +00:00
+}
+=> nil

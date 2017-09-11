@@ -1,0 +1,94 @@
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35mSQL (2.0ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (377.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "albums" CASCADE[0m
+  [1m[35m (41.6ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "artist_id" integer, "title" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (11.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  [1m[35m (6.1ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (29.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres" CASCADE[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "name" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (9.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "media_types" CASCADE[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "media_types" ("id" bigserial primary key, "name" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (8.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "playlists" CASCADE[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "playlists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (10.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "playlists_tracks" CASCADE[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE TABLE "playlists_tracks" ("id" bigserial primary key, "playlist_id" integer, "track_id" integer)[0m
+  [1m[35m (13.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "tracks" CASCADE[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "album_id" integer, "genre_id" integer, "media_type_id" integer, "name" character varying NOT NULL, "composer" character varying, "milliseconds" integer NOT NULL, "bytes" integer, "unit_price" decimal(10,2), "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (3.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (2.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (31.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "albums" CASCADE[0m
+  [1m[35m (26.4ms)[0m  [1m[35mCREATE TABLE "albums" ("id" bigserial primary key, "artist_id" integer, "title" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (10.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "artists" CASCADE[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "artists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (7.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "genres" CASCADE[0m
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE TABLE "genres" ("id" bigserial primary key, "name" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (15.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "media_types" CASCADE[0m
+  [1m[35m (21.2ms)[0m  [1m[35mCREATE TABLE "media_types" ("id" bigserial primary key, "name" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (13.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "playlists" CASCADE[0m
+  [1m[35m (16.5ms)[0m  [1m[35mCREATE TABLE "playlists" ("id" bigserial primary key, "name" character varying, "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "playlists_tracks" CASCADE[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE TABLE "playlists_tracks" ("id" bigserial primary key, "playlist_id" integer, "track_id" integer)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "tracks" CASCADE[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "tracks" ("id" bigserial primary key, "album_id" integer, "genre_id" integer, "media_type_id" integer, "name" character varying NOT NULL, "composer" character varying, "milliseconds" integer NOT NULL, "bytes" integer, "unit_price" decimal(10,2), "created_at" timestamp, "updated_at" timestamp)[0m
+  [1m[35m (3.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mAlbum Load (1.0ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."title" = $1 LIMIT $2[0m  [["title", "Vinicius De Moraes"], ["LIMIT", 1]]
+  [1m[36mAlbum Load (0.8ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."title" = $1 LIMIT $2[0m  [["title", "Vinicius De Moraes"], ["LIMIT", 1]]
+  [1m[36mTrack Load (6.0ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."album_id" = $1 LIMIT $2[0m  [["album_id", 247], ["LIMIT", 11]]
+  [1m[36mAlbum Load (0.9ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."title" = $1 LIMIT $2[0m  [["title", "Vinicius De Moraes"], ["LIMIT", 1]]
+  [1m[36mAlbum Load (0.6ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."title" = $1 LIMIT $2[0m  [["title", "Vinicius De Moraes"], ["LIMIT", 1]]
+  [1m[36mTrack Exists (1.9ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."album_id" = $1 LIMIT $2[0m  [["album_id", 247], ["LIMIT", 1]]
+  [1m[36mTrack Load (1.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."album_id" = $1[0m  [["album_id", 247]]
+  [1m[36mArtist Load (1.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Philip Glass Ensemble"], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Philip Glass Ensemble"], ["LIMIT", 1]]
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Philip Glass Ensemble"], ["LIMIT", 1]]
+  [1m[36mAlbum Load (0.4ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 275], ["LIMIT", 11]]
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."name" = $1 LIMIT $2[0m  [["name", "Philip Glass Ensemble"], ["LIMIT", 1]]
+  [1m[36mAlbum Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "albums" WHERE "albums"."artist_id" = $1 LIMIT $2[0m  [["artist_id", 275], ["LIMIT", 1]]
+  [1m[36mAlbum Load (0.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 275]]
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."name" = $1 LIMIT $2[0m  [["name", "Brazilian Music"], ["LIMIT", 1]]
+  [1m[36mPlaylist Load (0.6ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."name" = $1 LIMIT $2[0m  [["name", "Brazilian Music"], ["LIMIT", 1]]
+  [1m[36mTrack Load (7.1ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" INNER JOIN "playlists_tracks" ON "tracks"."id" = "playlists_tracks"."track_id" WHERE "playlists_tracks"."playlist_id" = $1 LIMIT $2[0m  [["playlist_id", 11], ["LIMIT", 11]]
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT  "playlists".* FROM "playlists" WHERE "playlists"."name" = $1 LIMIT $2[0m  [["name", "Brazilian Music"], ["LIMIT", 1]]
+  [1m[36mTrack Exists (2.7ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" INNER JOIN "playlists_tracks" ON "tracks"."id" = "playlists_tracks"."track_id" WHERE "playlists_tracks"."playlist_id" = $1 LIMIT $2[0m  [["playlist_id", 11], ["LIMIT", 1]]
+  [1m[36mTrack Load (3.3ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" INNER JOIN "playlists_tracks" ON "tracks"."id" = "playlists_tracks"."track_id" WHERE "playlists_tracks"."playlist_id" = $1[0m  [["playlist_id", 11]]
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Jazz"], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Jazz"], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.6ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Jazz"], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.4ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."genre_id" = $1 LIMIT $2[0m  [["genre_id", 2], ["LIMIT", 11]]
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Jazz"], ["LIMIT", 1]]
+  [1m[36mTrack Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."genre_id" = $1 LIMIT $2[0m  [["genre_id", 2], ["LIMIT", 1]]
+  [1m[36mTrack Load (1.6ms)[0m  [1m[34mSELECT "tracks".* FROM "tracks" WHERE "tracks"."genre_id" = $1[0m  [["genre_id", 2]]
+  [1m[36mGenre Load (0.7ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."name" = $1 LIMIT $2[0m  [["name", "Jazz"], ["LIMIT", 1]]
+  [1m[36mTrack Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "tracks" WHERE "tracks"."genre_id" = $1 LIMIT $2[0m  [["genre_id", 2], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.7ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."genre_id" = $1 LIMIT $2[0m  [["genre_id", 2], ["LIMIT", 10]]
+  [1m[36mTrack Load (8.9ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."name" = $1 LIMIT $2[0m  [["name", "My Time After Awhile"], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.5ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."name" = $1 LIMIT $2[0m  [["name", "My Time After Awhile"], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."name" = $1 LIMIT $2[0m  [["name", "My Time After Awhile"], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."name" = $1 LIMIT $2[0m  [["name", "My Time After Awhile"], ["LIMIT", 1]]
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.9ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."name" = $1 LIMIT $2[0m  [["name", "My Time After Awhile"], ["LIMIT", 1]]
+  [1m[36mMediaType Load (0.5ms)[0m  [1m[34mSELECT  "media_types".* FROM "media_types" WHERE "media_types"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.8ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."name" = $1 LIMIT $2[0m  [["name", "My Time After Awhile"], ["LIMIT", 1]]
+  [1m[36mTrack Load (0.6ms)[0m  [1m[34mSELECT  "tracks".* FROM "tracks" WHERE "tracks"."name" = $1 LIMIT $2[0m  [["name", "My Time After Awhile"], ["LIMIT", 1]]
+  [1m[36mAlbum Load (0.3ms)[0m  [1m[34mSELECT  "albums".* FROM "albums" WHERE "albums"."id" = $1 LIMIT $2[0m  [["id", 20], ["LIMIT", 1]]
